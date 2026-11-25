@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vianna Insulfilm | Películas automotivas, residenciais e comerciais</title>
+<meta name="description" content="Película Nano Cerâmica World Film e Nano Carbono para carros, casas e empresas. Proteção solar, conforto térmico e sofisticação em cada detalhe.">
+<meta name="theme-color" content="#0c0d0e">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0d0e;--ink:#f3f2ef;--soft:#a9abad;--mute:#6f7275;--line:#26282a;--graph:#16181a;--chumbo:#2b2e31;--max:1240px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.mono{font-family:"Geist Mono",monospace;font-size:13px;color:var(--soft);letter-spacing:.01em}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;background:#fff;color:#000;padding:8px 12px;z-index:99}
+h1,h2,h3{font-weight:500;letter-spacing:-.025em;line-height:1.05}
+h2{font-size:clamp(34px,4.6vw,58px)}
+h3{font-size:22px;letter-spacing:-.015em}
+p.lead{color:var(--soft);font-size:19px;max-width:560px}
+.btn{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 26px;border-radius:999px;font-weight:500;font-size:16px;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn-w{background:var(--ink);color:#0c0d0e}.btn-w:hover{background:#fff}
+.btn-o{border-color:#45484b;color:var(--ink)}.btn-o:hover{border-color:var(--ink)}
+section{padding:120px 0;border-top:1px solid var(--line)}
+
+/* header */
+.top{position:fixed;inset:0 0 auto;z-index:20;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.top.solid{background:rgba(12,13,14,.86);backdrop-filter:blur(14px);border-color:var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand svg{width:34px;height:30px}
+.brand b{display:block;font-weight:600;letter-spacing:.32em;font-size:15px}
+.brand small{display:block;font-size:10.5px;letter-spacing:.42em;color:var(--soft);margin-top:2px}
+.nav{display:flex;gap:30px;align-items:center}
+.nav a{text-decoration:none;font-size:15px;color:var(--soft)}.nav a:hover{color:var(--ink)}
+.nav .btn{height:42px;padding:0 20px;font-size:14px;color:#0c0d0e}
+.menu{display:none;background:none;border:1px solid #45484b;color:var(--ink);border-radius:999px;height:40px;padding:0 18px;font:inherit;font-size:14px}
+
+/* hero */
+.hero{min-height:100svh;display:grid;grid-template-columns:1.05fr .95fr;border:0;padding:0}
+.hero-copy{display:flex;flex-direction:column;justify-content:flex-end;padding:140px 56px 72px max(24px,calc((100vw - var(--max))/2 + 24px))}
+.hero h1{font-size:clamp(44px,6.2vw,92px);font-weight:400;letter-spacing:-.04em;margin:22px 0 28px}
+.hero h1 span{color:var(--mute)}
+.hero .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
+.hero-meta{display:flex;gap:28px;margin-top:64px;padding-top:24px;border-top:1px solid var(--line);flex-wrap:wrap}
+.hero-meta a{text-decoration:none}
+.hero-meta strong{font-weight:500;font-size:26px;letter-spacing:-.02em;margin-right:8px}
+.hero-photo{position:relative;overflow:hidden;background:var(--graph)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.75) contrast(1.05)}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 0,transparent 22%)}
+
+/* automotivo */
+.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:start}
+.films{list-style:none;border-top:1px solid var(--line)}
+.films li{display:grid;grid-template-columns:1fr auto;gap:8px 24px;padding:28px 0;border-bottom:1px solid var(--line)}
+.films li p{grid-column:1/-1;color:var(--soft);max-width:560px}
+.films .tag{font-family:"Geist Mono",monospace;font-size:12px;border:1px solid #45484b;border-radius:999px;padding:3px 10px;color:var(--ink);align-self:center}
+.films li.star h3::after{content:" — linha premium";color:var(--mute);font-weight:400}
+.sticky{position:sticky;top:120px}
+.sticky p.lead{margin-top:24px}
+
+/* nano */
+.nano{background:var(--graph)}
+.nano-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:64px;align-items:center}
+.tint{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:4/3;background:#000}
+.tint img{width:100%;height:100%;object-fit:cover}
+.tint .shade{position:absolute;inset:0;background:#050607;opacity:.55;transition:opacity .5s ease}
+.tint .read{position:absolute;left:20px;bottom:18px;right:20px;display:flex;justify-content:space-between;align-items:end;gap:12px}
+.tint .read b{font-weight:500;font-size:46px;letter-spacing:-.03em;line-height:1}
+.tint .read span{font-family:"Geist Mono",monospace;font-size:12px;color:#d6d7d8;text-align:right;max-width:220px}
+.picks{display:flex;gap:8px;margin:28px 0 10px;flex-wrap:wrap}
+.picks button{font:500 14px "Geist Mono",monospace;background:none;color:var(--soft);border:1px solid #3a3d40;border-radius:999px;height:40px;padding:0 16px;cursor:pointer}
+.picks button[aria-pressed=true]{background:var(--ink);color:#0c0d0e;border-color:var(--ink)}
+.nano ul.facts{list-style:none;margin:32px 0;border-top:1px solid var(--line)}
+.nano ul.facts li{padding:16px 0;border-bottom:1px solid var(--line);color:var(--soft)}
+.nano ul.facts li strong{color:var(--ink);font-weight:500}
+
+/* residencial */
+.arch-head{display:flex;justify-content:space-between;align-items:end;gap:40px;flex-wrap:wrap;margin-bottom:56px}
+.types{display:flex;flex-wrap:wrap;gap:8px;max-width:520px}
+.types span{border:1px solid #3a3d40;border-radius:999px;padding:6px 14px;font-size:14px;color:var(--soft)}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ba figure{position:relative}
+.ba img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px}
+.ba figcaption{margin-top:12px}
+
+/* diferenciais */
+.diff{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);margin-top:56px}
+.diff div{padding:32px 28px 0 0}
+.diff div+div{padding-left:28px;border-left:1px solid var(--line)}
+.diff p{color:var(--soft);margin-top:12px;font-size:16px}
+.warranty{margin-top:72px;display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:6px}
+.warranty div{padding:32px}
+.warranty div+div{border-left:1px solid var(--line)}
+.warranty p{color:var(--soft);margin-top:10px}
+
+/* galeria */
+.gal{display:grid;grid-template-columns:repeat(12,1fr);gap:12px;margin-top:56px}
+.gal figure{overflow:hidden;border-radius:4px;background:var(--graph)}
+.gal img{width:100%;height:100%;object-fit:cover}
+.g1{grid-column:span 7;aspect-ratio:7/5}.g2{grid-column:span 5}.g3{grid-column:span 4;aspect-ratio:1}.g4{grid-column:span 4}.g5{grid-column:span 4}
+.gal figcaption{display:none}
+
+/* avaliacoes */
+.rev-top{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap}
+.score{display:flex;align-items:baseline;gap:14px;text-decoration:none}
+.score b{font-size:84px;font-weight:400;letter-spacing:-.05em;line-height:1}
+.reviews{columns:3;column-gap:16px;margin-top:56px}
+.reviews blockquote{break-inside:avoid;border:1px solid var(--line);border-radius:6px;padding:28px;margin-bottom:16px}
+.reviews blockquote p{font-size:17px}
+.reviews cite{display:block;margin-top:18px;font-style:normal}
+
+/* faq */
+.faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}
+details{border-bottom:1px solid var(--line)}
+details:first-child{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:24px 40px 24px 0;font-size:19px;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";position:absolute;right:6px;top:50%;width:12px;height:12px;border-right:1.5px solid var(--soft);border-bottom:1.5px solid var(--soft);transform:translateY(-70%) rotate(45deg);transition:transform .25s}
+details[open] summary::after{transform:translateY(-30%) rotate(225deg)}
+details p{color:var(--soft);padding:0 40px 26px 0;max-width:640px}
+
+/* orcamento */
+.quote{background:var(--ink);color:#0c0d0e;border:0}
+.quote .lead{color:#55585b}
+.quote-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+label{display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:500}
+label.full{grid-column:1/-1}
+input,select,textarea{font:inherit;font-size:16px;color:#0c0d0e;background:transparent;border:0;border-bottom:1px solid #b9bbbd;padding:10px 0;border-radius:0;outline:none}
+input:focus,select:focus,textarea:focus{border-color:#0c0d0e}
+textarea{resize:vertical;min-height:84px}
+.opts{display:flex;flex-wrap:wrap;gap:8px;grid-column:1/-1}
+.opts input{position:absolute;opacity:0}
+.opts label{flex-direction:row}
+.opts span{border:1px solid #b9bbbd;border-radius:999px;padding:8px 16px;font-weight:400;cursor:pointer}
+.opts input:checked+span{background:#0c0d0e;color:var(--ink);border-color:#0c0d0e}
+.opts input:focus-visible+span{outline:2px solid #0c0d0e;outline-offset:2px}
+form .btn{grid-column:1/-1;justify-self:start;background:#0c0d0e;color:var(--ink);margin-top:8px}
+.quote .mono{color:#55585b}
+
+/* footer */
+footer{padding:72px 0 120px;border-top:1px solid var(--line)}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.foot a{text-decoration:none;color:var(--soft);display:block;margin-top:8px}.foot a:hover{color:var(--ink)}
+.foot .mono{display:block}
+.credit{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+.wa{position:fixed;right:20px;bottom:20px;z-index:30;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.wa svg{width:28px;height:28px;fill:#fff}
+.proto{position:fixed;left:16px;bottom:16px;z-index:30;font:500 12px "Geist Mono",monospace;background:rgba(12,13,14,.9);color:var(--soft);border:1px solid var(--line);border-radius:999px;padding:7px 12px}
+
+@media (max-width:900px){
+ section{padding:84px 0}
+ .nav a:not(.btn){display:none}
+ .hero{grid-template-columns:1fr;min-height:auto}
+ .hero-photo{order:-1;height:62vh}
+ .hero-photo::after{background:linear-gradient(0deg,var(--bg) 0,transparent 40%)}
+ .hero-copy{padding:0 20px 56px}
+ .split,.nano-grid,.faq,.quote-grid{grid-template-columns:1fr;gap:40px}
+ .sticky{position:static}
+ .diff{grid-template-columns:1fr 1fr}
+ .diff div,.diff div+div{padding:28px 16px 0 0;border-left:0}
+ .warranty{grid-template-columns:1fr}.warranty div+div{border-left:0;border-top:1px solid var(--line)}
+ .gal{grid-template-columns:1fr 1fr}.gal figure{grid-column:span 1!important;aspect-ratio:1}.g1{grid-column:span 2!important;aspect-ratio:4/3!important}
+ .reviews{columns:1}
+ form{grid-template-columns:1fr}
+ .foot{grid-template-columns:1fr}
+ .wrap{padding:0 20px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#orcamento">Pular para o orçamento</a>
+
+<header class="top" id="top">
+ <div class="wrap">
+  <a class="brand" href="#top" aria-label="Vianna Insulfilm, início">
+   <svg viewBox="0 0 64 56" aria-hidden="true"><defs><linearGradient id="vg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#f3f2ef"/><stop offset=".55" stop-color="#9a9da1"/><stop offset="1" stop-color="#e4e5e6"/></linearGradient></defs><path d="M2 2h17l13 38L45 2h17L39 54H25z" fill="url(#vg)"/><path d="M45 9h11L37 52z" fill="#0c0d0e"/></svg>
+   <span><b>VIANNA</b><small>INSULFILM</small></span>
+  </a>
+  <nav class="nav" aria-label="Seções">
+   <a href="#automotivo">Automotivo</a>
+   <a href="#nano">Nano Cerâmica</a>
+   <a href="#ambientes">Residencial e comercial</a>
+   <a href="#trabalhos">Trabalhos</a>
+   <a href="#duvidas">Dúvidas</a>
+   <a class="btn btn-w" href="#orcamento">Orçamento</a>
+  </nav>
+ </div>
+</header>
+
+<main>
+<section class="hero" aria-labelledby="h1">
+ <div class="hero-copy">
+  <span class="mono">Películas automotivas e arquitetônicas</span>
+  <h1 id="h1">Proteção solar, conforto térmico <span>e sofisticação em cada detalhe.</span></h1>
+  <p class="lead">Nano Cerâmica World Film e Nano Carbono, aplicadas com atenção ao acabamento em carros, casas e empresas.</p>
+  <div class="acts">
+   <a class="btn btn-w" href="#orcamento">Solicitar orçamento</a>
+   <a class="btn btn-o" href="#nano">Conhecer a Nano Cerâmica</a>
+  </div>
+  <div class="hero-meta">
+   <a href="#avaliacoes"><strong>4,9</strong><span class="mono">60 avaliações no Google</span></a>
+   <a href="https://www.instagram.com/vianna_insulf/" target="_blank" rel="noopener"><span class="mono">@vianna_insulf</span></a>
+  </div>
+ </div>
+ <figure class="hero-photo">
+  <img src="img/studio-jeep-1280.webp" srcset="img/studio-jeep-640.webp 640w, img/studio-jeep-1280.webp 1280w" sizes="(max-width:900px) 100vw, 48vw" alt="Jeep preto no studio da Vianna depois da aplicação de película" width="1050" height="1400" fetchpriority="high">
+ </figure>
+</section>
+
+<section id="automotivo">
+ <div class="wrap split">
+  <div class="sticky">
+   <span class="mono">Automotivo</span>
+   <h2 style="margin-top:18px">A película certa para o seu carro.</h2>
+   <p class="lead">Antes de aplicar, a gente entende como você usa o carro e o quanto quer escurecer, e indica a linha que faz sentido.</p>
+   <a class="btn btn-o" style="margin-top:32px" href="#orcamento" data-svc="Automotivo">Pedir orçamento para o carro</a>
+  </div>
+  <ul class="films">
+   <li class="star"><h3>Nano Cerâmica World Film</h3><span class="tag">Premium</span><p>Nossa linha principal, para quem quer o melhor em conforto térmico e proteção solar com um visual limpo.</p></li>
+   <li><h3>Nano Carbono</h3><span class="tag">Automotivo</span><p>Visual grafite e privacidade para o uso do dia a dia.</p></li>
+   <li><h3>Aplicação e remoção</h3><span class="tag">Serviço</span><p>Película velha, bolhada ou fora do tom? Removemos com cuidado antes da nova aplicação.</p></li>
+  </ul>
+ </div>
+</section>
+
+<section class="nano" id="nano">
+ <div class="wrap nano-grid">
+  <div>
+   <div class="tint" id="tint">
+    <img src="img/studio-suv-1280.webp" srcset="img/studio-suv-640.webp 640w, img/studio-suv-1280.webp 1280w" sizes="(max-width:900px) 100vw, 58vw" alt="SUV no studio da Vianna" loading="lazy">
+    <div class="shade" id="shade"></div>
+    <div class="read"><b id="tval">G20</b><span id="tdesc">cerca de 20% da luz visível passa pelo vidro</span></div>
+   </div>
+   <div class="picks" role="group" aria-label="Simular tonalidade">
+    <button type="button" data-g="5" aria-pressed="false">G05</button>
+    <button type="button" data-g="20" aria-pressed="true">G20</button>
+    <button type="button" data-g="35" aria-pressed="false">G35</button>
+    <button type="button" data-g="50" aria-pressed="false">G50</button>
+    <button type="button" data-g="70" aria-pressed="false">G70</button>
+   </div>
+   <span class="mono">Simulação ilustrativa. O tom real a gente mostra no atendimento.</span>
+  </div>
+  <div>
+   <span class="mono">Destaque Vianna</span>
+   <h2 style="margin-top:18px">Nano Cerâmica Premium.</h2>
+   <p class="lead" style="margin-top:20px">A linha que a Vianna mais recomenda. Da World Film, para carros e para vidros de casa e empresa.</p>
+   <ul class="facts">
+    <li><strong>Conforto térmico</strong> para quem passa muito tempo no carro ou tem vidro pegando sol.</li>
+    <li><strong>Proteção solar</strong> para você e para o interior.</li>
+    <li><strong>Visual limpo</strong> nas tonalidades que você escolher.</li>
+   </ul>
+   <a class="btn btn-w" href="#orcamento" data-svc="Nano Cerâmica">Quero a Nano Cerâmica</a>
+  </div>
+ </div>
+</section>
+
+<section id="ambientes">
+ <div class="wrap">
+  <div class="arch-head">
+   <div>
+    <span class="mono">Residencial e comercial</span>
+    <h2 style="margin-top:18px;max-width:640px">Menos sol direto, mais privacidade no vidro.</h2>
+   </div>
+   <div class="types"><span>Controle solar</span><span>Nano Cerâmica</span><span>Fumê</span><span>Espelhada</span><span>Decorativa e privacidade</span></div>
+  </div>
+  <div class="ba">
+   <figure><img src="assets/janela-antes.jpg" alt="Janela antes da aplicação de película" loading="lazy"><figcaption class="mono">Antes</figcaption></figure>
+   <figure><img src="assets/janela-depois.jpg" alt="A mesma janela depois da aplicação de película" loading="lazy"><figcaption class="mono">Depois</figcaption></figure>
+  </div>
+  <a class="btn btn-o" style="margin-top:40px" href="#orcamento" data-svc="Residencial ou comercial">Orçamento para casa ou empresa</a>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <span class="mono">Por que a Vianna</span>
+  <h2 style="margin-top:18px;max-width:760px">O cuidado aparece no acabamento.</h2>
+  <div class="diff">
+   <div><h3>Atenção aos detalhes</h3><p>Bordas, cantos e borrachas tratados com calma.</p></div>
+   <div><h3>Materiais de qualidade</h3><p>Películas de marcas reconhecidas, como a World Film.</p></div>
+   <div><h3>Acabamento</h3><p>Aplicação profissional, sem pressa pra entregar.</p></div>
+   <div><h3>Cuidado com cada carro e ambiente</h3><p>Do primeiro contato ao pós-atendimento.</p></div>
+  </div>
+  <div class="warranty">
+   <div><span class="mono">Garantia do fabricante</span><h3 style="margin-top:12px">Segue a película escolhida</h3><p>Prazo e condições definidos pelo fabricante de cada linha. A gente informa no orçamento.</p></div>
+   <div><span class="mono">Garantia de aplicação</span><h3 style="margin-top:12px">10 dias pela Vianna</h3><p>Cobre o serviço de aplicação feito pela nossa equipe.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="trabalhos">
+ <div class="wrap">
+  <span class="mono">Trabalhos realizados</span>
+  <h2 style="margin-top:18px">Feitos pela Vianna.</h2>
+  <div class="gal">
+   <figure class="g1"><img src="assets/entrada-vidro.jpg" alt="Película aplicada em entrada de vidro" loading="lazy"></figure>
+   <figure class="g2"><img src="img/studio-moto-1280.webp" alt="Moto no studio da Vianna" loading="lazy"></figure>
+   <figure class="g3"><img src="assets/box-instalado.jpg" alt="Película aplicada em box de vidro" loading="lazy"></figure>
+   <figure class="g4"><img src="assets/divisoria.jpg" alt="Película decorativa em divisória" loading="lazy"></figure>
+   <figure class="g5"><img src="assets/porta-entrada.jpg" alt="Película em porta de entrada" loading="lazy"></figure>
+  </div>
+ </div>
+</section>
+
+<section id="avaliacoes">
+ <div class="wrap">
+  <div class="rev-top">
+   <div><span class="mono">Avaliações reais no Google</span><h2 style="margin-top:18px">Quem já aplicou, conta.</h2></div>
+   <a class="score" href="https://www.google.com/maps/place/Vianna+Insulfilm/@-22.378713,-41.7812767,17z/data=!4m8!3m7!1s0x96316f9d08556f:0x51772d7f28b6d7ab!8m2!3d-22.378713!4d-41.7812767!9m1!1b1" target="_blank" rel="noopener"><b>4,9</b><span class="mono">★★★★★<br>60 avaliações</span></a>
+  </div>
+  <div class="reviews">
+   <blockquote><p>Serviço excelente! O carro ficou muito bonito e o resultado superou minhas expectativas. Desde o primeiro atendimento até o pós-atendimento, fui muito bem tratado, com atenção, transparência e cuidado em todos os detalhes.</p><cite class="mono">Dienes Pereira</cite></blockquote>
+   <blockquote><p>Excelente atendimento, serviço de qualidade e muito profissionalismo do início ao fim. Recomendo muito.</p><cite class="mono">Jovani Aguiar</cite></blockquote>
+   <blockquote><p>Atendimento excelente desde o primeiro contato. Explicações claras e objetivas. O serviço ficou excelente e o preço é justo. Agradeço ao Lucas pela disponibilidade de me atender mais cedo, fora do horário, para poder me devolver o carro no prazo.</p><cite class="mono">Matheus Cavalhiere</cite></blockquote>
+   <blockquote><p>O profissional instalou o insulfilm com excelente qualidade e foi muito ágil no atendimento. Recomendo!</p><cite class="mono">Alexandre Blumel</cite></blockquote>
+   <blockquote><p>Atendimento muito bom e o trabalho foi realizado com total excelência, fiquei muito satisfeito com o resultado.</p><cite class="mono">José Henrique</cite></blockquote>
+  </div>
+ </div>
+</section>
+
+<section id="duvidas">
+ <div class="wrap faq">
+  <div><span class="mono">Perguntas frequentes</span><h2 style="margin-top:18px">Antes de escolher.</h2></div>
+  <div>
+   <details><summary>Qual a diferença entre Nano Cerâmica e Nano Carbono?</summary><p>As duas são linhas superiores à película comum. A Nano Cerâmica é a nossa linha premium, para quem prioriza conforto térmico. A Nano Carbono tem visual grafite e atende bem o uso do dia a dia. No atendimento a gente mostra as duas.</p></details>
+   <details><summary>O que quer dizer G05, G20, G35?</summary><p>É a quantidade de luz visível que passa pelo vidro. G05 deixa passar cerca de 5% (bem escura), G70 cerca de 70% (bem clara).</p></details>
+   <details><summary>Vocês aplicam em casa, loja e escritório?</summary><p>Sim. Portas, janelas, vitrines, fachadas, box e divisórias, com películas de controle solar, nano cerâmica, fumê, espelhada, decorativa e de privacidade.</p></details>
+   <details><summary>Dá pra trocar uma película velha?</summary><p>Sim. Fazemos a remoção da película antiga e a aplicação da nova. Avise no orçamento para a remoção entrar na avaliação.</p></details>
+   <details><summary>Como funciona a garantia?</summary><p>São duas: a garantia do fabricante, que segue as condições da película escolhida, e a garantia de aplicação da Vianna, de 10 dias, que cobre o serviço feito pela nossa equipe.</p></details>
+   <details><summary>Quanto custa?</summary><p>Depende da película, do tamanho dos vidros e do veículo ou ambiente. Mande os dados no formulário e a gente responde com o valor certo pelo WhatsApp.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="quote" id="orcamento">
+ <div class="wrap quote-grid">
+  <div>
+   <span class="mono">Orçamento</span>
+   <h2 style="margin-top:18px">Conte o que você precisa.</h2>
+   <p class="lead" style="margin-top:20px">Preencha e toque em enviar. A mensagem já abre pronta no WhatsApp da Vianna.</p>
+  </div>
+  <form id="f" novalidate>
+   <div class="opts" role="radiogroup" aria-label="Serviço">
+    <label><input type="radio" name="svc" value="Nano Cerâmica" checked><span>Nano Cerâmica</span></label>
+    <label><input type="radio" name="svc" value="Nano Carbono"><span>Nano Carbono</span></label>
+    <label><input type="radio" name="svc" value="Residencial ou comercial"><span>Casa ou empresa</span></label>
+    <label><input type="radio" name="svc" value="Remoção de película"><span>Remoção</span></label>
+   </div>
+   <label>Seu nome<input name="nome" required autocomplete="name"></label>
+   <label>Carro ou ambiente<input name="obj" placeholder="Ex.: Compass 2023, janela da sala"></label>
+   <label class="full">Mensagem (opcional)<textarea name="msg" placeholder="Tonalidade que gostaria, quantos vidros, dúvidas"></textarea></label>
+   <button class="btn" type="submit">Enviar pelo WhatsApp</button>
+  </form>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="foot">
+   <div>
+    <a class="brand" href="#top" style="margin:0;color:var(--ink)"><svg viewBox="0 0 64 56" aria-hidden="true"><path d="M2 2h17l13 38L45 2h17L39 54H25z" fill="url(#vg)"/><path d="M45 9h11L37 52z" fill="#0c0d0e"/></svg><span><b>VIANNA</b><small>INSULFILM</small></span></a>
+    <p style="color:var(--soft);margin-top:20px;max-width:360px">Proteção solar, conforto térmico e sofisticação em cada detalhe.</p>
+   </div>
+   <div><span class="mono">Contato</span><a href="https://wa.me/5522997155385" target="_blank" rel="noopener">(22) 99715-5385</a><a href="mailto:viannainsulfilm@gmail.com">viannainsulfilm@gmail.com</a></div>
+   <div><span class="mono">Redes</span><a href="https://www.instagram.com/vianna_insulf/" target="_blank" rel="noopener">Instagram @vianna_insulf</a></div>
+  </div>
+  <div class="credit"><span class="mono">© <span id="y"></span> Vianna Insulfilm</span><span class="mono">Site desenvolvido por Danilo Bossolani</span></div>
+ </div>
+</footer>
+
+<a class="wa" href="https://wa.me/5522997155385?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg></a>
+
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+const hdr=document.getElementById('top');
+addEventListener('scroll',()=>hdr.classList.toggle('solid',scrollY>40),{passive:true});
+const shade=document.getElementById('shade'),tv=document.getElementById('tval'),td=document.getElementById('tdesc');
+document.querySelectorAll('.picks button').forEach(b=>b.addEventListener('click',()=>{
+ const g=+b.dataset.g;
+ document.querySelectorAll('.picks button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+ shade.style.opacity=((100-g)/100*.75).toFixed(2);
+ tv.textContent='G'+String(g).padStart(2,'0');
+ td.textContent='cerca de '+g+'% da luz visível passa pelo vidro';
+}));
+document.querySelectorAll('[data-svc]').forEach(a=>a.addEventListener('click',()=>{
+ const v=a.dataset.svc==='Automotivo'?'Nano Cerâmica':a.dataset.svc;
+ const r=document.querySelector('input[name=svc][value="'+v+'"]');if(r)r.checked=true;
+}));
+document.getElementById('f').addEventListener('submit',e=>{
+ e.preventDefault();const f=e.target,n=f.nome.value.trim();
+ if(!n){f.nome.focus();return}
+ const t='Olá, Vianna! Vim pelo site.\n\nNome: '+n+'\nServiço: '+f.svc.value+(f.obj.value.trim()?'\nCarro/ambiente: '+f.obj.value.trim():'')+(f.msg.value.trim()?'\n\n'+f.msg.value.trim():'');
+ window.open('https://wa.me/5522997155385?text='+encodeURIComponent(t),'_blank','noopener');
+});
+</script>
+</body>
+</html>
