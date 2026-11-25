@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://viannainsulfilm.com.br/sitemap.xml
